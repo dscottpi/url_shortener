@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form acton="/" method="post">
+      <input
+        aria-label="URL to be shortened"
+        placeholder="https://facebook.com"
+        name="long_url"
+        type="text"
+      />
+      <button>Shorten</button>
+    </form>
+    {% if short_url %}
+    <p>{{ url_for(request.endpoint, **request.view_args) }}{{short_url}}</p>
+    {% endif %}
+  </body>
+</html>
